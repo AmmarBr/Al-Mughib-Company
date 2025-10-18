@@ -1,0 +1,21 @@
+
+@import "tailwindcss";
+
+* {
+  font-family: 'Hacen Maghreb', sans-serif;
+  box-sizing: border-box;
+
+}
+
+
+
+@font-face {
+  font-family: 'Hacen Maghreb';
+  src: url('./assets/fonts/Hacen Maghreb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
