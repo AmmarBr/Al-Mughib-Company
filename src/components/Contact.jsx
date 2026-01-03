@@ -94,7 +94,7 @@ export default function Contact() {
                 </div>
                 <div className='my-6 text-right group'>
                     <label className="text-sm font-bold text-[var(--brand-gold)] mb-2 block">الرسالة</label>
-                    <textarea name="message" required placeholder="كيف يمكننا مساعدتك؟"
+                    <textarea name="message" id="contact-message" required placeholder="كيف يمكننا مساعدتك؟"
                         className='w-full bg-[var(--bg-secondary)]/50 border border-gray-700 rounded-xl px-4 py-3 h-48 resize-none focus:border-[var(--brand-gold)] focus:bg-[var(--bg-secondary)] focus:outline-none transition-all duration-300 text-white placeholder-gray-600'
                     />
                 </div>

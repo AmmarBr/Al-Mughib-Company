@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-16 relative z-10">
         {/* الشعار والوصف */}
         <div className="md:w-1/3 flex flex-col items-start gap-8">
-          <img src={assets.logo_dark} alt="شعار المغيب" className="w-44 brightness-110" />
+          <img src={assets.logo} alt="شعار المغيب" className="w-44 brightness-110" />
           <p className="text-sm leading-relaxed text-gray-400 font-medium opacity-80 max-w-sm">
             شركة متخصصة في تقديم أفضل الحلول العقارية مع التركيز على الجودة والابتكار لتلبية احتياجات عملائنا بمعايير استثنائية.
           </p>
@@ -36,12 +36,17 @@ export default function Footer() {
             <span className="absolute -bottom-2 right-0 w-1/2 h-0.5 bg-[var(--brand-gold)]"></span>
           </h3>
           <ul className="flex flex-col gap-4 text-gray-400 text-sm font-medium">
-            {['الرئيسية', 'من نحن', 'المشاريع', 'سياسة الخصوصية'].map((item, index) => (
+            {[
+              { label: 'الرئيسية', path: '/#Header' },
+              { label: 'من نحن', path: '/#About' },
+              { label: 'المشاريع', path: '/#Projects' },
+              { label: 'سياسة الخصوصية', path: '/privacy' }
+            ].map((item, index) => (
               <li key={index}>
-                <a href={`#${item === 'الرئيسية' ? 'Header' : item === 'من نحن' ? 'About' : item === 'المشاريع' ? 'Projects' : '#'}`}
+                <a href={item.path}
                   className="hover:text-[var(--brand-gold)] hover:translate-x-[-5px] transition-all duration-300 inline-block flex items-center gap-2 group">
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-gold)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -63,6 +68,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="أدخل بريدك الإلكتروني"
+                aria-label="البريد الإلكتروني للنشرة البريدية"
                 className="w-full p-4 pr-12 rounded-xl bg-[var(--bg-secondary)]/50 placeholder-gray-600 text-white border border-gray-800 focus:outline-none focus:border-[var(--brand-gold)] focus:bg-[var(--bg-secondary)] transition-all duration-300"
               />
             </div>
@@ -80,6 +86,8 @@ export default function Footer() {
       <div className="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-gray-300">
           حقوق النشر © {new Date().getFullYear()} <span className="text-[var(--brand-gold)] font-bold">AL MUGHEB</span>. جميع الحقوق محفوظة.
+          <span className="mx-2 opacity-30">|</span>
+          تطوير <a href="https://goldenbee.sa/" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-gold)] hover:underline">شركة النحلة الذهبية</a>
         </p>
         <div className="flex gap-6 text-xs font-medium tracking-wide">
           <Link to="/terms" className="hover:text-white transition-colors">الشروط والأحكام</Link>

@@ -70,7 +70,6 @@ export default function NavBar() {
     { href: "#Header", label: "الرئيسية" },
     { href: "#About", label: "من نحن" },
     { href: "#Projects", label: "المشاريع" },
-    { href: "#Contact", label: "تواصل معنا" }
   ];
 
   return (

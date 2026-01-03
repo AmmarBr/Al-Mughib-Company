@@ -18,10 +18,11 @@ const StatCard = ({ number, text, icon: Icon }) => {
     useEffect(() => {
         springValue.on("change", (latest) => {
             if (ref.current) {
-                ref.current.textContent = "+" + Math.floor(latest).toFixed(0);
+                const val = Math.floor(latest);
+                ref.current.textContent = (number > 1000 ? "" : "+") + val;
             }
         })
-    }, [springValue]);
+    }, [springValue, number]);
 
     return (
         <motion.div
@@ -50,15 +51,14 @@ export default function About() {
             className='flex flex-col items-center justify-center mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden min-h-screen'
             id='About'
         >
-            <h2 className='text-2xl sm:text-4xl font-bold mb-4 text-center'>
+            <h2 className='text-3xl sm:text-5xl font-bold mb-4 text-center text-gradient-gold'>
                 من نحن
-                <span className='underline underline-offset-4 decoration-1 under font-light text-[var(--brand-gold)]'> شركتنا</span>
             </h2>
             <p className='text-gray-400 max-w-xl text-center mb-12 text-lg'>
-                شغوفون بالعقارات ومكرسون لمساعدة عملائنا في العثور على منازل أحلامهم.
+                منذ عام 2016، نرسخ معايير جديدة للفخامة والابتكار في الرياض، معتمدين على خبرة عريقة تتجاوز الثلاثين عاماً في التطوير العقاري المتميز.
             </p>
             <div className='flex flex-col md:flex-row items-center md:items-start md:gap-20 w-full'>
-                <img src={assets.brand_img} alt='شركة المغيب للتطوير العقاري - مشاريعنا في الرياض' className='w-full sm:w-1/2 h-auto max-w-lg rounded-lg shadow-2xl' loading="lazy" />
+                <img src={assets.brand_img} alt='شركة المغيب للتطوير العقاري - مشاريعنا في الرياض' className='w-full sm:w-1/2 h-auto max-w-lg rounded-3xl shadow-2xl border border-white/10' loading="lazy" />
                 <div className='flex flex-col items-center md:items-center gap-8 md:gap-12 w-full'>
                     <motion.div
                         initial="hidden"
@@ -67,17 +67,14 @@ export default function About() {
                         transition={{ staggerChildren: 0.1 }}
                         className='grid grid-cols-2 gap-6 md:gap-8 w-full'
                     >
-                        <StatCard number={25} text="سنوات الخبرة" icon={FaClock} />
-                        <StatCard number={13} text="مشاريع مكتملة" icon={FaBuilding} />
-                        <StatCard number={17} text="ملايين قدم مربع" icon={FaRulerCombined} />
-                        <StatCard number={20} text="مشاريع جارية" icon={FaHardHat} />
+                        <StatCard number={new Date().getFullYear() - 2016} text="عاماً من الخبرة" icon={FaClock} />
+                        <StatCard number={2016} text="سنة التأسيس" icon={FaBuilding} />
+                        <StatCard number={13} text="مشروعاً منجزاً" icon={FaHardHat} />
+                        <StatCard number={25} text="مشاريع جارية" icon={FaRulerCombined} />
                     </motion.div>
                     <p className='text-gray-400 my-6 max-w-lg text-center leading-relaxed text-lg'>
-                        نسعى دائمًا لتقديم أفضل الخدمات العقارية التي تجمع بين الجودة والابتكار لنلبي احتياجات عملائنا بأعلى المعايير
+                        نؤمن بأن التطوير العقاري هو صناعة حياة؛ لذا نطور مشاريعنا وفق أعلى معايير الابتكار والاستدامة لنلبي احتياجات عملائنا الاستثنائية.
                     </p>
-                    <button className='bg-[var(--brand-gold)] text-[#27282f] py-3 px-10 rounded-full font-bold hover:bg-white hover:text-[var(--brand-gold)] transition-all duration-300 shadow-lg'>
-                        اعرف المزيد
-                    </button>
                 </div>
             </div>
         </motion.div>

@@ -5,12 +5,20 @@ export default function Header() {
   const [copied, setCopied] = useState(false);
 
   const handleQuoteClick = (e) => {
-    // Attempt to copy the email
-    navigator.clipboard.writeText("sales@almughib.com");
-    setCopied(true);
+    e.preventDefault();
+    const contactSection = document.getElementById('Contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
 
-    // Reset state after 3 seconds
-    setTimeout(() => setCopied(false), 3000);
+      // Fill the message field after a slight delay to ensure scroll happens
+      setTimeout(() => {
+        const messageField = document.getElementById('contact-message');
+        if (messageField) {
+          messageField.value = "أود الاستفسار عن تفاصيل المساحات الإدارية المتوفرة في برج المغيب وكيفية حجز موعد للمعاينة.";
+          messageField.focus();
+        }
+      }, 800);
+    }
   };
 
   return (
@@ -83,32 +91,11 @@ export default function Header() {
             className='flex flex-col sm:flex-row gap-6 mt-4 w-full sm:w-auto'
           >
             <a
-              href="mailto:sales@almughib.com?subject=طلب عرض سعر لبرج المغيب&body=الاسم الكريم:%0D%0Aرقم الجوال:%0D%0Aتفاصيل الطلب:"
+              href="#Contact"
               onClick={handleQuoteClick}
               className="relative overflow-hidden bg-[var(--brand-gold)] px-12 py-4 rounded-full text-[#1a1b20] text-xl font-bold transition-all duration-500 hover:shadow-[0_0_30px_rgba(178,146,95,0.5)] hover:bg-[#d4af37] hover:scale-105 inline-block"
             >
-              <AnimatePresence mode="wait">
-                {copied ? (
-                  <motion.span
-                    key="copied"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                    className="flex items-center gap-2"
-                  >
-                    تم نسخ الإيميل ✓
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="quote"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                  >
-                    طلب عرض سعر
-                  </motion.span>
-                )}
-              </AnimatePresence>
+              طلب عرض سعر
             </a>
 
             <a

@@ -4,12 +4,21 @@ import { assets } from '../assets/assets'
 import { FiMapPin, FiBriefcase, FiGrid, FiCheckCircle } from 'react-icons/fi'
 
 const BurjAlMughib = () => {
-    const [copied, setCopied] = useState(false);
+    const handleQuoteClick = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('Contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
 
-    const handleQuoteClick = () => {
-        navigator.clipboard.writeText("sales@almughib.com");
-        setCopied(true);
-        setTimeout(() => setCopied(false), 3000);
+            // Fill the message field after a slight delay to ensure scroll happens
+            setTimeout(() => {
+                const messageField = document.getElementById('contact-message');
+                if (messageField) {
+                    messageField.value = "أود الاستفسار عن تفاصيل المساحات الإدارية المتوفرة في برج المغيب وكيفية حجز موعد للمعاينة.";
+                    messageField.focus();
+                }
+            }, 800);
+        }
     };
 
 
@@ -38,23 +47,24 @@ const BurjAlMughib = () => {
     ]
 
     return (
-        <section id="BurjProject" className="py-32 px-8 md:px-20 lg:px-32 bg-[var(--bg-primary)] overflow-hidden relative">
-            {/* Cinematic Background Elements */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--brand-gold)]/5 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] -ml-40 -mb-40"></div>
+        <section id="BurjProject" className="py-32 px-8 md:px-20 lg:px-32 bg-[var(--bg-primary)] overflow-hidden relative will-change-transform">
+            {/* Cinematic Background Elements - Simplified for Performance */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--brand-gold)]/5 rounded-full blur-[80px] -mr-64 -mt-64"></div>
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[60px] -ml-40 -mb-40"></div>
 
-            {/* Animated Grid Pattern Overlay */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#B2925F 1px, transparent 1px), linear-gradient(90deg, #B2925F 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
+            {/* Static Grid Pattern for Performance */}
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#B2925F 1px, transparent 1px), linear-gradient(90deg, #B2925F 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
 
             <div className="container mx-auto relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-20">
 
                     {/* Visual Side with Cinematic Video */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                        initial={{ opacity: 0, scale: 0.95, x: 30 }}
                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                        transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="lg:w-1/2 relative group"
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="lg:w-1/2 relative group will-change-transform"
                     >
                         {/* Professional Decorative Frames */}
                         <div className="absolute -inset-8 border border-[var(--brand-gold)]/5 rounded-[40px] hidden lg:block"></div>
@@ -90,9 +100,10 @@ const BurjAlMughib = () => {
 
                     {/* Content Side */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8 }}
                         className="lg:w-1/2 text-right"
                     >
                         <div className="inline-flex items-center gap-3 mb-8 bg-[var(--brand-gold)]/5 px-6 py-2 rounded-full border border-[var(--brand-gold)]/20 backdrop-blur-sm">
@@ -115,10 +126,11 @@ const BurjAlMughib = () => {
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                                    className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-[var(--brand-gold)]/40 hover:bg-white/[0.06] transition-all duration-700 group relative overflow-hidden"
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05, duration: 0.4 }}
+                                    className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-[var(--brand-gold)]/40 hover:bg-white/[0.05] transition-all duration-500 group relative overflow-hidden"
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-gold)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                                     <div className="mb-6 transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-700 relative z-10">{feature.icon}</div>
@@ -130,26 +142,16 @@ const BurjAlMughib = () => {
 
                         <div className="flex flex-col sm:flex-row-reverse gap-6">
                             <a
-                                href="mailto:sales@almughib.com?subject=طلب عرض سعر لبرج المغيب&body=الاسم الكريم:%0D%0Aرقم الجوال:%0D%0Aتفاصيل الطلب:"
+                                href="#Contact"
                                 onClick={handleQuoteClick}
                                 className="group relative px-12 py-5 rounded-full font-bold text-lg overflow-hidden transition-all duration-700 hover:-translate-y-1 flex items-center justify-center gap-3"
                             >
-                                {/* Glass Background with Gold Border */}
-                                <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-[var(--brand-gold)]/30 rounded-full group-hover:bg-[var(--brand-gold)] group-hover:border-[var(--brand-gold)] transition-all duration-700"></div>
+                                {/* Simplified Background for Performance */}
+                                <div className="absolute inset-0 bg-[#27282f] border border-[var(--brand-gold)]/30 rounded-full group-hover:bg-[var(--brand-gold)] group-hover:border-[var(--brand-gold)] transition-all duration-500"></div>
 
                                 {/* Content */}
-                                <span className="relative z-10 text-[var(--brand-gold)] group-hover:text-[#1a1b20] transition-colors duration-700">
-                                    <AnimatePresence mode="wait">
-                                        <motion.span
-                                            key={copied ? "copied" : "default"}
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            transition={{ duration: 0.2 }}
-                                        >
-                                            {copied ? "تم نسخ الإيميل ✓" : "تواصل معنا لحجز مساحتك"}
-                                        </motion.span>
-                                    </AnimatePresence>
+                                <span className="relative z-10 text-[var(--brand-gold)] group-hover:text-[#1a1b20] transition-colors duration-500">
+                                    تواصل معنا لحجز مساحتك
                                 </span>
 
                                 {/* Internal Light Scan Effect */}
