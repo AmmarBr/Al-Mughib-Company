@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { assets, projectsData } from '../assets/assets'
 import { motion } from 'framer-motion'
-import { FaMapMarkerAlt } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaHardHat } from 'react-icons/fa'
 
-export default function Projects() {
+export default function OngoingProjects() {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -15,7 +15,7 @@ export default function Projects() {
   }
 
   return (
-    <div className='mx-auto py-4 pt-20 px-6 pb-20 md:px-20 lg:px-32 w-full overflow-hidden' id='Projects'>
+    <div className='mx-auto py-4 pt-20 px-6 pb-20 md:px-20 lg:px-32 w-full overflow-hidden' id='OngoingProjects'>
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Projects() {
         className='text-2xl sm:text-4xl font-bold mb-4 text-center'
       >
         المشاريع
-        <span className='underline underline-offset-4 decoration-1 under font-light text-[var(--brand-gold)]'> المنجزة</span>
+        <span className='underline underline-offset-4 decoration-1 under font-light text-[var(--brand-gold)]'> الجارية</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export default function Projects() {
         transition={{ delay: 0.2, duration: 0.8 }}
         className='text-center text-gray-400 max-w-xl mx-auto mb-12 text-lg'
       >
-        لقد نجحنا في إتمام العديد من المشاريع التي تعكس خبرتنا والتزامنا بالتميز
+        هذه هي المشاريع التي نقوم بتنفيذها حالياً ونسعى لإتمامها بأعلى جودة.
       </motion.p>
 
       {/* Navigation Buttons */}
@@ -75,12 +75,11 @@ export default function Projects() {
                 {/* Overlay for Contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1b20] via-transparent to-transparent opacity-80"></div>
 
-                {/* Sold Badge */}
-                {project.isSold && (
-                  <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded shadow-lg border border-red-400">
-                    تم البيع
-                  </div>
-                )}
+                {/* Ongoing Badge */}
+                <div className="absolute top-4 right-4 bg-[var(--brand-gold)] text-[#27282f] text-xs font-bold px-3 py-1 rounded shadow-lg flex items-center gap-2">
+                  <FaHardHat /> جاري التنفيذ
+                </div>
+
               </div>
 
               {/* Content */}
