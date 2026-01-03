@@ -2,15 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
-  const [isDesktop, setIsDesktop] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    // Check if desktop on mount - this prevents the video from loading on mobile or during initial LCP paint
-    if (window.innerWidth > 768) {
-      setIsDesktop(true);
-    }
-  }, []);
 
   const handleQuoteClick = (e) => {
     // Attempt to copy the email
@@ -41,10 +33,7 @@ export default function Header() {
           poster="./header_img.png"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          {/* Only render source if we are on desktop after hydration */}
-          {isDesktop && (
-            <source src="/برج المغيب تصوير مسفر الحارثي(٤).mp4" type="video/mp4" />
-          )}
+          <source src="/برج المغيب تصوير مسفر الحارثي(٤).mp4" type="video/mp4" />
         </video>
 
         {/* Layered Overlays for Cinematic Feel (Reduced Opacity for Clarity) */}
