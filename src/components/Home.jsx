@@ -1,23 +1,26 @@
-import React from 'react'
-import About from './About'
-import Contact from './Contact'
-import Projects from './Projects'
-import OngoingProjects from './ProjectsInProgress'
-import CustomerServices from './Services'
-import Testimonials from './Testimonials'
+import React, { lazy, Suspense } from 'react'
 import Header from './Header'
-import Footer from './Footer'
+
+// Lazy loaded sections
+const About = lazy(() => import('./About'));
+const BurjAlMughib = lazy(() => import('./BurjAlMughib'));
+const Projects = lazy(() => import('./Projects'));
+const CustomerServices = lazy(() => import('./Services'));
+const Contact = lazy(() => import('./Contact'));
+const Footer = lazy(() => import('./Footer'));
+
 const Home = () => {
     return (
         <div id="Home">
             <Header />
-            <About />
-            <Projects />
-            <OngoingProjects />
-            <CustomerServices />
-            <Testimonials />
-            <Contact />
-            <Footer />
+            <Suspense fallback={<div className="h-96 bg-[#1a1b20]" />}>
+                <About />
+                <BurjAlMughib />
+                <Projects />
+                <CustomerServices />
+                <Contact />
+                <Footer />
+            </Suspense>
         </div>
     )
 }

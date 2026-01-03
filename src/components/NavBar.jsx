@@ -70,7 +70,7 @@ export default function NavBar() {
     { href: "#Header", label: "الرئيسية" },
     { href: "#About", label: "من نحن" },
     { href: "#Projects", label: "المشاريع" },
-    { href: "#Testimonials", label: "آراء العملاء" }
+    { href: "#Contact", label: "تواصل معنا" }
   ];
 
   return (
@@ -111,7 +111,8 @@ export default function NavBar() {
         {/* Mobile Menu Icon */}
         <img
           src={assets.menu_icon}
-          alt="قائمة"
+          alt=""
+          aria-label="افتتاح القائمة"
           className="md:hidden cursor-pointer w-8 h-8 filter invert brightness-0 drop-shadow-md"
           onClick={handleMenuToggle}
         />
@@ -134,6 +135,7 @@ export default function NavBar() {
             <button
               className="absolute top-6 left-6 text-white p-2 rounded-full hover:bg-white/10 transition-colors"
               onClick={handleCloseMenu}
+              aria-label="إغلاق القائمة"
             >
               <IoClose className="w-10 h-10 text-[var(--brand-gold)]" />
             </button>

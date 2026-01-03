@@ -49,7 +49,7 @@ export default function Contact() {
 
     return (
         <div className='text-center p-6 py-20 lg:px-32 w-full overflow-hidden min-h-[400px]' id='Contact'>
-            <motion.h1
+            <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -57,7 +57,7 @@ export default function Contact() {
             >
                 تواصل
                 <span className='underline underline-offset-4 decoration-1 under font-light text-[var(--brand-gold)]'> معنا</span>
-            </motion.h1>
+            </motion.h2>
             <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -80,20 +80,20 @@ export default function Contact() {
 
                 <div className='flex flex-wrap gap-6'>
                     <div className='w-full md:flex-1 text-right group'>
-                        <label className="text-sm font-medium text-[var(--brand-gold)] mb-2 block">الاسم</label>
+                        <label className="text-sm font-bold text-[var(--brand-gold)] mb-2 block">الاسم</label>
                         <input type="text" name="name" required placeholder="الاسم الكريم"
                             className='w-full bg-[var(--bg-secondary)]/50 border border-gray-700 rounded-xl px-4 py-3 focus:border-[var(--brand-gold)] focus:bg-[var(--bg-secondary)] focus:outline-none transition-all duration-300 text-white placeholder-gray-600'
                         />
                     </div>
                     <div className='w-full md:flex-1 text-right group'>
-                        <label className="text-sm font-medium text-[var(--brand-gold)] mb-2 block">البريد الإلكتروني</label>
+                        <label className="text-sm font-bold text-[var(--brand-gold)] mb-2 block">البريد الإلكتروني</label>
                         <input type="email" name="email" required placeholder="example@email.com"
                             className='w-full bg-[var(--bg-secondary)]/50 border border-gray-700 rounded-xl px-4 py-3 focus:border-[var(--brand-gold)] focus:bg-[var(--bg-secondary)] focus:outline-none transition-all duration-300 text-white placeholder-gray-600'
                         />
                     </div>
                 </div>
                 <div className='my-6 text-right group'>
-                    <label className="text-sm font-medium text-[var(--brand-gold)] mb-2 block">الرسالة</label>
+                    <label className="text-sm font-bold text-[var(--brand-gold)] mb-2 block">الرسالة</label>
                     <textarea name="message" required placeholder="كيف يمكننا مساعدتك؟"
                         className='w-full bg-[var(--bg-secondary)]/50 border border-gray-700 rounded-xl px-4 py-3 h-48 resize-none focus:border-[var(--brand-gold)] focus:bg-[var(--bg-secondary)] focus:outline-none transition-all duration-300 text-white placeholder-gray-600'
                     />

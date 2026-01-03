@@ -50,15 +50,15 @@ export default function About() {
             className='flex flex-col items-center justify-center mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden min-h-screen'
             id='About'
         >
-            <h1 className='text-2xl sm:text-4xl font-bold mb-4 text-center'>
+            <h2 className='text-2xl sm:text-4xl font-bold mb-4 text-center'>
                 من نحن
                 <span className='underline underline-offset-4 decoration-1 under font-light text-[var(--brand-gold)]'> شركتنا</span>
-            </h1>
+            </h2>
             <p className='text-gray-400 max-w-xl text-center mb-12 text-lg'>
                 شغوفون بالعقارات ومكرسون لمساعدة عملائنا في العثور على منازل أحلامهم.
             </p>
             <div className='flex flex-col md:flex-row items-center md:items-start md:gap-20 w-full'>
-                <img src={assets.brand_img} alt='عن شركتنا' className='w-full sm:w-1/2 h-auto max-w-lg rounded-lg shadow-2xl' />
+                <img src={assets.brand_img} alt='شركة المغيب للتطوير العقاري - مشاريعنا في الرياض' className='w-full sm:w-1/2 h-auto max-w-lg rounded-lg shadow-2xl' loading="lazy" />
                 <div className='flex flex-col items-center md:items-center gap-8 md:gap-12 w-full'>
                     <motion.div
                         initial="hidden"

@@ -77,6 +77,34 @@ body {
   }
 }
 
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(200%) rotate(45deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-light-sweep {
+  animation: light-sweep 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
 
 
 @font-face {
@@ -84,6 +112,7 @@ body {
   src: url('./assets/fonts/Hacen_Maghreb/Hacen Maghreb.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -91,6 +120,7 @@ body {
   src: url('./assets/fonts/Hacen_Maghreb/Hacen Maghreb Bd.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -98,4 +128,5 @@ body {
   src: url('./assets/fonts/Hacen_Maghreb/Hacen Maghreb Lt.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }

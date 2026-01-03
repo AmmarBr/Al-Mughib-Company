@@ -1,69 +1,153 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    // Check if desktop on mount - this prevents the video from loading on mobile or during initial LCP paint
+    if (window.innerWidth > 768) {
+      setIsDesktop(true);
+    }
+  }, []);
+
+  const handleQuoteClick = (e) => {
+    // Attempt to copy the email
+    navigator.clipboard.writeText("sales@almughib.com");
+    setCopied(true);
+
+    // Reset state after 3 seconds
+    setTimeout(() => setCopied(false), 3000);
+  };
+
   return (
     <div
       className='relative min-h-screen flex items-center w-full overflow-hidden'
       id='Header'
     >
-      {/* Background with Parallax and Zoom */}
+      {/* Background Video with Zoom & Cinematic Overlay */}
       <motion.div
-        className='absolute inset-0 z-0 bg-cover bg-center'
-        style={{ backgroundImage: `url('/header_img.png')` }}
+        className='absolute inset-0 z-0 overflow-hidden'
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 10, ease: "easeOut" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent"></div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="./header_img.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          {/* Only render source if we are on desktop after hydration */}
+          {isDesktop && (
+            <source src="/برج المغيب تصوير مسفر الحارثي(٤).mp4" type="video/mp4" />
+          )}
+        </video>
+
+        {/* Layered Overlays for Cinematic Feel (Reduced Opacity for Clarity) */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]"></div>
       </motion.div>
 
-
-
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, staggerChildren: 0.2 }}
-        className='relative z-20 container mx-auto flex flex-col items-center justify-center h-full text-center py-4 px-6 md:px-20 lg:px-32 text-white max-w-4xl pt-32'
-      >
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className='text-5xl md:text-7xl font-bold mb-6 text-[var(--brand-gold)] drop-shadow-lg'
-        >
-          شركة المغيب للتطوير العقاري
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className='text-lg md:text-xl mb-10 leading-relaxed text-gray-200'
-        >
-          شركة متخصصة في تطوير مشاريع عقارية مبتكرة تعزز جودة الحياة وتلبي احتياجات السوق، بخبرة تمتد لأكثر من 25 سنة
-        </motion.p>
-
+      <div className='relative z-20 container mx-auto flex flex-col items-center justify-center min-h-screen text-center py-4 px-6 md:px-20 lg:px-32 text-white max-w-4xl'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className='flex gap-6 mt-6'
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex flex-col items-center"
         >
-          <a
-            href="#Projects"
-            className="hover:scale-105 transition-transform duration-300 cursor-pointer border border-[var(--brand-gold)] text-[var(--brand-gold)] px-10 py-4 rounded-full text-lg hover:bg-[var(--brand-gold)] hover:text-white"
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 1 }}
+            className='text-5xl md:text-8xl font-bold mb-4 text-gradient-gold drop-shadow-[0_0_15px_rgba(178,146,95,0.3)] leading-tight'
           >
-            المشاريع
-          </a>
-          <a
-            href="#Contact"
-            className="hover:scale-105 transition-transform duration-300 cursor-pointer bg-[var(--brand-gold)] px-10 py-4 rounded-full text-[#27282f] text-lg font-semibold hover:bg-white hover:text-[var(--brand-gold)]"
+            برج المغيب
+          </motion.h1>
+
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
+            className='text-2xl md:text-4xl font-semibold mb-8 text-[var(--brand-gold)] opacity-90'
           >
-            تواصل معنا
-          </a>
+            أكبر برج إداري في مدينة الرياض
+          </motion.h3>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 1 }}
+            className='text-lg md:text-2xl mb-12 leading-relaxed text-gray-200/90 max-w-2xl font-light tracking-wide'
+          >
+            برج إداري متكامل يقع في أرقى أحياء شمال الرياض – حي الصحافة، يوفر مساحات إدارية متنوعة ضمن بيئة عمل حديثة ومتكاملة.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className='flex flex-col sm:flex-row gap-6 mt-4 w-full sm:w-auto'
+          >
+            <a
+              href="mailto:sales@almughib.com?subject=طلب عرض سعر لبرج المغيب&body=الاسم الكريم:%0D%0Aرقم الجوال:%0D%0Aتفاصيل الطلب:"
+              onClick={handleQuoteClick}
+              className="relative overflow-hidden bg-[var(--brand-gold)] px-12 py-4 rounded-full text-[#1a1b20] text-xl font-bold transition-all duration-500 hover:shadow-[0_0_30px_rgba(178,146,95,0.5)] hover:bg-[#d4af37] hover:scale-105 inline-block"
+            >
+              <AnimatePresence mode="wait">
+                {copied ? (
+                  <motion.span
+                    key="copied"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    className="flex items-center gap-2"
+                  >
+                    تم نسخ الإيميل ✓
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="quote"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                  >
+                    طلب عرض سعر
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </a>
+
+            <a
+              href="#Projects"
+              className="glass-panel px-12 py-4 rounded-full text-white text-xl font-medium border border-white/20 transition-all duration-500 hover:bg-white/10 hover:border-white/40 hover:scale-105"
+            >
+              استكشف المشاريع
+            </a>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <span className="text-[var(--brand-gold)] text-xs uppercase tracking-[0.3em] font-light">استكشف</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-[var(--brand-gold)] to-transparent relative overflow-hidden">
+            <motion.div
+              animate={{ y: [0, 48, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-0 left-0 w-full h-1/3 bg-white/40"
+            />
+          </div>
+        </motion.div>
+      </div>
     </div>
   )
 }

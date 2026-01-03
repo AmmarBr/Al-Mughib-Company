@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import Terms from './components/Terms'
-import Privacy from './components/Privacy'
 import WhatsappButton from './components/WhatsappButton'
 import Loader from './components/Loader'
 import NavBar from './components/NavBar'
+
+// Lazy loaded components
+const Home = lazy(() => import('./components/Home'));
+const Terms = lazy(() => import('./components/Terms'));
+const Privacy = lazy(() => import('./components/Privacy'));
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -26,11 +28,13 @@ export default function App() {
       <div className={loading ? 'opacity-0' : 'opacity-100 transition-opacity duration-1000'}>
         <NavBar />
         <WhatsappButton />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
+        <Suspense fallback={<div className="h-screen bg-[#1a1b20]" />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   )

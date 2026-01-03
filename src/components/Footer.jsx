@@ -21,8 +21,8 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex gap-4">
-            {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, index) => (
-              <a key={index} href="#" className="w-10 h-10 rounded-full bg-[var(--bg-secondary)] border border-white/5 flex items-center justify-center text-[var(--brand-gold)] hover:bg-[var(--brand-gold)] hover:text-[#111] transition-all duration-300 hover:shadow-[0_0_15px_rgba(178,146,95,0.4)]">
+            {[{ Icon: FaFacebookF, label: 'فيسبوك' }, { Icon: FaTwitter, label: 'تويتر' }, { Icon: FaInstagram, label: 'إنستغرام' }, { Icon: FaLinkedinIn, label: 'لينكد إن' }].map(({ Icon, label }, index) => (
+              <a key={index} href="#" aria-label={label} className="w-10 h-10 rounded-full bg-[var(--bg-secondary)] border border-white/5 flex items-center justify-center text-[var(--brand-gold)] hover:bg-[var(--brand-gold)] hover:text-[#111] transition-all duration-300 hover:shadow-[0_0_15px_rgba(178,146,95,0.4)]">
                 <Icon size={16} />
               </a>
             ))}
@@ -78,7 +78,7 @@ export default function Footer() {
 
       {/* حقوق النشر */}
       <div className="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>
+        <p className="text-gray-300">
           حقوق النشر © {new Date().getFullYear()} <span className="text-[var(--brand-gold)] font-bold">AL MUGHEB</span>. جميع الحقوق محفوظة.
         </p>
         <div className="flex gap-6 text-xs font-medium tracking-wide">
