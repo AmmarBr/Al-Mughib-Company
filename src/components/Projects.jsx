@@ -21,56 +21,56 @@ const categories = [
 const allProjects = [
   // التطوير العقاري
   {
-    title: "الفيلات السكنية",
+    title: "الفلل  السكنية",
     category: "التطوير العقاري",
     desc: "نصمم ونبني فلل راقية بمواصفات عالية تجمع بين الفخامة والوظيفية وتلبي احتياجات السكن العصري.",
-    image: assets.project_img_3
+    image: assets.residential_villas
   },
   {
     title: "المباني الإدارية",
     category: "التطوير العقاري",
     desc: "نُطوّر مبانٍ إدارية حديثة بتصاميم ذكية ومواقع استراتيجية تدعم بيئة العمل وتواكب متطلبات الشركات والمستثمرين.",
-    image: assets.project_img_2
+    image: assets.administrative_building
   },
   {
     title: "المجمعات السكنية",
     category: "التطوير العقاري",
     desc: "نُنشئ مجمعات سكنية متكاملة توفر الخصوصية والراحة للعائلات، وتجمع بين جودة البناء وروعة التصميم.",
-    image: assets.project_img_1
+    image: assets.residential_complex
   },
   // القطاع الفندقي والسياحي
   {
     title: "أجنحة المغيب",
     category: "القطاع الفندقي والسياحي",
     desc: "نُطوّر ونُشغّل منشآت فندقية وسياحية تجمع بين الفخامة والراحة وعالي الجودة.",
-    image: assets.project_img_4
+    image: assets.almughib_suites
   },
   {
     title: "فنادق المغيب",
     category: "القطاع الفندقي والسياحي",
     desc: "نمتلك علامات فندقية متميزة تعكس خبرتنا الطويلة في قطاع الضيافة الراقية بالمملكة.",
-    image: assets.header_img
+    image: assets.almughib_hotels
   },
   // محطات الوقود والخدمات
   {
     title: "بترو المغيب",
     category: "محطات الوقود والخدمات",
     desc: "نُطوّر محطات وقود متكاملة بتصاميم عصرية ومعايير أمان عالية توفر تجربة مريحة وآمنة.",
-    image: assets.project_img_4
+    image: assets.petro_station
   },
   // القطاع التجاري
   {
     title: "معارض المغيب",
     category: "القطاع التجاري",
     desc: "نُنشئ صالات ومعارض تجارية بمواقع استراتيجية وتصاميم حديثة تخدم مختلف الأنشطة الاقتصادية.",
-    image: assets.project_img_2
+    image: assets.showrooms
   },
   // الوحدات السكنية والفيلات
   {
-    title: "فيلات المغيب الحديثة",
-    category: "الوحدات السكنية والفيلات",
-    desc: "نبني وحدات وفيلات سكنية راقية توفر الراحة والجمال وجودة الحياة العصرية.",
-    image: assets.project_img_1
+    title: "فلل  المغيب الحديثة",
+    category: "الوحدات السكنية و الفلل",
+    desc: "نبني وحدات فلل راقية توفر الراحة والجمال و جودة الحياة العصرية.",
+    image: assets.modern_villas
   }
 ];
 
@@ -96,7 +96,7 @@ export default function Projects() {
             مشاريع <span className="text-gradient-gold">المغيب</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-            استكشف محفظة مشاريعنا المتنوعة التي تغطي مختلف القطاعات الحيوية في المملكة العربية السعودية.
+            استكشف سابقة أعمالنا المتنوعة التي تغطي مختلف القطاعات الحيوية في المملكة العربية السعودية.
           </p>
         </motion.div>
 

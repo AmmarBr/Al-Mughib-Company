@@ -32,11 +32,11 @@ const BurjAlMughib = () => {
         {
             icon: <FiMapPin className="text-[var(--brand-gold)]" size={24} />,
             title: "قلب شمال الرياض",
-            desc: "تواجد استراتيجي يضعك في مركز الحركة الاقتصادية."
+            desc: "وجود استراتيجي يضعك في مركز الحركة الاقتصادية."
         },
         {
             icon: <FiGrid className="text-[var(--brand-gold)]" size={24} />,
-            title: "تصميم مرن",
+            title: "مساحات واسعة ",
             desc: "مساحات مفتوحة وقابلة للتشكيل حسب هوية شركتك."
         },
         {
@@ -73,7 +73,7 @@ const BurjAlMughib = () => {
                         <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] aspect-[4/5] lg:aspect-[3/4] group">
                             {/* Cinematic Image Asset */}
                             <img
-                                src={assets.header_img}
+                                src={assets.administrative_building}
                                 alt="مشروع برج المغيب - الرياض"
                                 loading="lazy"
                                 className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"

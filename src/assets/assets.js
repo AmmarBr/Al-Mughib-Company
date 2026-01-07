@@ -17,6 +17,16 @@ import profile_img_1 from './profile_img_1.png'
 import profile_img_2 from './profile_img_2.png'
 import profile_img_3 from './profile_img_3.png'
 
+// New Project Images
+import residential_villas from './residential_villas.jpg'
+import administrative_building from './administrative_building.jpg'
+import residential_complex from './residential_complex.jpg'
+import almughib_suites from './almughib_suites.jpg'
+import almughib_hotels from './almughib_hotels.jpg'
+import petro_station from './petro_station.jpg'
+import showrooms from './showrooms.jpg'
+import modern_villas from './modern_villas.jpg'
+
 export const assets = {
   logo,
   logo_dark,
@@ -31,6 +41,15 @@ export const assets = {
   project_img_4,
   left_arrow,
   right_arrow,
+  // New Assets
+  residential_villas,
+  administrative_building,
+  residential_complex,
+  almughib_suites,
+  almughib_hotels,
+  petro_station,
+  showrooms,
+  modern_villas
 }
 
 export const projectsData = [

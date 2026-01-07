@@ -72,7 +72,7 @@ export default function Header() {
             transition={{ delay: 0.4, duration: 1 }}
             className='text-2xl md:text-4xl font-semibold mb-8 text-[var(--brand-gold)] opacity-90'
           >
-            أكبر برج إداري في مدينة الرياض
+            من افضل الابراج الادارية في الرياض
           </motion.h3>
 
           <motion.p
@@ -81,7 +81,7 @@ export default function Header() {
             transition={{ delay: 0.6, duration: 1 }}
             className='text-lg md:text-2xl mb-12 leading-relaxed text-gray-200/90 max-w-2xl font-light tracking-wide'
           >
-            برج إداري متكامل يقع في أرقى أحياء شمال الرياض – حي الصحافة، يوفر مساحات إدارية متنوعة ضمن بيئة عمل حديثة ومتكاملة.
+            برج إداري متكامل يقع في أرقى أحياء شمال الرياض – حي الصحافة، يوفر مساحات إدارية و خدمية متنوعة ضمن بيئة عمل حديثة ومتكاملة.
           </motion.p>
 
           <motion.div
