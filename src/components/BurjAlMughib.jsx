@@ -64,25 +64,45 @@ const BurjAlMughib = () => {
                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="lg:w-1/2 relative group will-change-transform"
+                        className="lg:w-1/2 relative group will-change-transform z-20"
                     >
                         {/* Professional Decorative Frames */}
                         <div className="absolute -inset-8 border border-[var(--brand-gold)]/5 rounded-[40px] hidden lg:block"></div>
                         <div className="absolute -inset-4 border border-[var(--brand-gold)]/10 rounded-[35px] hidden lg:block"></div>
 
-                        <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] aspect-[4/5] lg:aspect-[3/4] group">
-                            {/* Cinematic Image Asset */}
+                        {/* Image Container - REMOVED overflow-hidden to allow pop-out */}
+                        <div className="relative rounded-3xl border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] aspect-[4/5] lg:aspect-[3/4] group">
+
+                            {/* Premium CSS Background */}
+                            <div className="absolute inset-0 bg-[#0a0a0a] overflow-hidden rounded-3xl">
+                                {/* Base Night Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#1a1a1a] to-[#0a0a0a]"></div>
+
+                                {/* Ambient Gold Glow (Bottom) */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[var(--brand-gold)]/10 to-transparent opacity-60"></div>
+
+                                {/* Moon/Spotlight Glow (Top Left) */}
+                                <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px]"></div>
+
+                                {/* Subtle Grid Pattern */}
+                                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#B2925F 1px, transparent 1px), linear-gradient(90deg, #B2925F 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+
+                                {/* Star-like particles (Static for performance) */}
+                                <div className="absolute top-10 right-20 w-1 h-1 bg-white/40 rounded-full shadow-[0_0_10px_white]"></div>
+                                <div className="absolute top-40 left-10 w-1.5 h-1.5 bg-white/30 rounded-full shadow-[0_0_10px_white]"></div>
+                                <div className="absolute top-20 right-1/3 w-1 h-1 bg-white/20 rounded-full"></div>
+                            </div>
+
+                            {/* Cinematic Image Asset - Scaled and Translated to Pop Out */}
                             <img
-                                src={assets.administrative_building}
+                                src={assets.burj_transparent}
                                 alt="مشروع برج المغيب - الرياض"
                                 loading="lazy"
-                                className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
+                                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[95%] max-w-none h-auto object-contain transition-transform duration-[3s] group-hover:scale-105 group-hover:-translate-y-4 z-10"
                             />
 
-                            {/* Premium Overlays */}
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-
+                            {/* Premium Overlays - Behind the image or subtle */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 rounded-3xl pointer-events-none z-0"></div>
 
 
                         </div>
@@ -91,7 +111,7 @@ const BurjAlMughib = () => {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -top-10 -right-4 bg-gradient-to-br from-[var(--brand-gold)] to-[#d4af37] text-[#1a1b20] py-4 px-8 rounded-2xl font-black shadow-[0_20px_40px_rgba(178,146,95,0.4)] hidden md:block z-20 border border-white/20"
+                            className="absolute -top-10 -right-4 bg-gradient-to-br from-[var(--brand-gold)] to-[#d4af37] text-[#1a1b20] py-4 px-8 rounded-2xl font-black shadow-[0_20px_40px_rgba(178,146,95,0.4)] hidden md:block z-30 border border-white/20"
                         >
                             <span className="relative z-10">مشروعنا الرائد</span>
                             <div className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>

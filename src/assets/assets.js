@@ -26,6 +26,7 @@ import almughib_hotels from './almughib_hotels.jpg'
 import petro_station from './petro_station.jpg'
 import showrooms from './showrooms.jpg'
 import modern_villas from './modern_villas.jpg'
+import burj_transparent from './burj_transparent.png'
 
 export const assets = {
   logo,
@@ -49,7 +50,8 @@ export const assets = {
   almughib_hotels,
   petro_station,
   showrooms,
-  modern_villas
+  modern_villas,
+  burj_transparent
 }
 
 export const projectsData = [
