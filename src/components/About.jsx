@@ -48,17 +48,38 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-            className='flex flex-col items-center justify-center mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden min-h-screen'
+            className='flex flex-col items-center justify-center mx-auto px-6 md:px-20 lg:px-32 py-16 md:py-32 w-full md:w-[90%] lg:w-4/5 overflow-hidden min-h-[auto] md:min-h-screen'
             id='About'
         >
             <h2 className='text-3xl sm:text-5xl font-bold mb-4 text-center text-gradient-gold'>
                 من نحن
             </h2>
-            <p className='text-gray-400 max-w-xl text-center mb-12 text-lg'>
+            <p className='text-gray-400 max-w-xl text-center mb-12 text-base md:text-lg'>
                 منذ عام 2016، نرسخ معايير جديدة للفخامة والابتكار في الرياض، معتمدين على خبرة عريقة تتجاوز الثلاثين عاماً في التطوير العقاري المتميز.
             </p>
             <div className='flex flex-col md:flex-row items-center md:items-start md:gap-20 w-full'>
-                <img src={assets.brand_img} alt='شركة المغيب للتطوير العقاري - مشاريعنا في الرياض' className='w-full sm:w-1/2 h-auto max-w-lg rounded-3xl shadow-2xl border border-white/10' loading="lazy" />
+                <div className='w-full md:w-1/2 relative group flex items-center justify-center p-4 md:p-8 mb-12 md:mb-0'>
+                    {/* Shadow/Glow behind */}
+                    <div className='absolute inset-4 md:inset-8 bg-[var(--brand-gold)]/5 rounded-[120px_120px_120px_20px] md:rounded-[160px_160px_160px_20px] blur-2xl transition-all duration-500'></div>
+
+                    <div className='relative w-full max-w-[350px] md:max-w-none aspect-[4/5]'>
+                        {/* Background Frame (Clipped) */}
+                        <div className='absolute inset-0 overflow-hidden rounded-[120px_120px_120px_20px] md:rounded-[160px_160px_160px_20px] border border-white/10 shadow-2xl bg-[#1a1b1f]'>
+                            <img
+                                src={assets.about_bg}
+                                alt='خلفية'
+                                className='w-full h-full object-cover object-center'
+                            />
+                        </div>
+
+                        {/* Tower Image (Overflowing TOP ONLY) */}
+                        <img
+                            src={assets.about_tower}
+                            alt='برج المغيب'
+                            className='absolute left-1/2 bottom-0 w-full h-[120%] md:h-[125%] max-w-none -translate-x-1/2 object-contain object-bottom'
+                        />
+                    </div>
+                </div>
                 <div className='flex flex-col items-center md:items-center gap-8 md:gap-12 w-full'>
                     <motion.div
                         initial="hidden"

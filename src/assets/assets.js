@@ -19,7 +19,7 @@ import profile_img_3 from './profile_img_3.png'
 
 // New Project Images
 import residential_villas from './residential_villas.jpg'
-import administrative_building from './administrative_building.jpg'
+import administrative_building from './administrative_building.jpeg'
 import residential_complex from './residential_complex.jpg'
 import almughib_suites from './almughib_suites.jpg'
 import almughib_hotels from './almughib_hotels.jpg'
@@ -27,6 +27,8 @@ import petro_station from './petro_station.jpg'
 import showrooms from './showrooms.jpg'
 import modern_villas from './modern_villas.jpg'
 import burj_transparent from './burj_transparent.png'
+import about_tower from './image (2).png'
+import about_bg from './WhatsApp Image 2026-01-04 at 3.42.15 PM.jpeg'
 
 export const assets = {
   logo,
@@ -51,7 +53,9 @@ export const assets = {
   petro_station,
   showrooms,
   modern_villas,
-  burj_transparent
+  burj_transparent,
+  about_tower,
+  about_bg
 }
 
 export const projectsData = [
