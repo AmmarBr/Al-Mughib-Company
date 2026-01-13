@@ -121,8 +121,8 @@ export default function BurjDetails() {
                                 <img src={assets.about_bg} alt="Neighborhood" className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                                     <h3 className="text-4xl md:text-5xl font-bold text-white text-center">
-                                        2,000 ريال / م²<br />
-                                        <span className="text-xl md:text-2xl font-normal text-[var(--brand-gold)] mt-2 block">متوسط السعر المتداول</span>
+                                        أسعار تنافسية<br />
+                                        <span className="text-xl md:text-2xl font-normal text-[var(--brand-gold)] mt-2 block">مقارنة بمتوسط السعر المتداول</span>
                                     </h3>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ export default function BurjDetails() {
                                 <motion.li variants={fadeInUp} className='flex gap-4 items-start'>
                                     <FaHandshake className='text-[var(--brand-gold)] text-2xl mt-1 shrink-0' />
                                     <p className='text-gray-300 text-lg leading-relaxed'>
-                                        اعتماد التسعير على موقع البرج وقربه من المحاور الحيوية، وبناءً على ذلك يبلغ متوسط السعر المتداول في المنطقة 2,000 ريال للمتر المربع.
+                                        اعتماد التسعير على موقع البرج وقربه من المحاور الحيوية، وبناءً على ذلك يقدم البرج أسعاراً مدروسة ومنافسة للسوق.
                                     </p>
                                 </motion.li>
                             </ul>
@@ -220,8 +220,8 @@ export default function BurjDetails() {
                         </div>
                         <div className='p-8 pt-20 flex-grow'>
                             <h3 className='text-3xl font-bold text-white mb-2'>باقة BASIC</h3>
-                            <div className='text-4xl font-bold text-[var(--brand-gold)] mb-6'>
-                                2500 <span className='text-xl text-gray-400 font-normal'>ريال / م²</span>
+                            <div className='text-3xl font-bold text-[var(--brand-gold)] mb-6'>
+                                سعر تنافسي
                             </div>
                             <p className='text-gray-400 mb-8 border-b border-white/10 pb-6 min-h-[5rem]'>
                                 باقة تشغيلية أساسية مصممة لتوفير بيئة عمل متكاملة، مع إتاحة خدمات إضافية اختيارية.
@@ -251,8 +251,8 @@ export default function BurjDetails() {
                         </div>
                         <div className='p-8 pt-20 flex-grow'>
                             <h3 className='text-3xl font-bold text-white mb-2'>باقة BUSINESS</h3>
-                            <div className='text-4xl font-bold text-[var(--brand-gold)] mb-6'>
-                                2750 <span className='text-xl text-gray-400 font-normal'>ريال / م²</span>
+                            <div className='text-3xl font-bold text-[var(--brand-gold)] mb-6'>
+                                سعر تنافسي
                             </div>
                             <p className='text-gray-400 mb-8 border-b border-white/10 pb-6 min-h-[5rem]'>
                                 باقة أعمال متقدمة موجهة للشركات، تجمع بين الخدمات الأساسية ومجموعة موسعة من الخدمات الإضافية.
@@ -287,8 +287,8 @@ export default function BurjDetails() {
                         </div>
                         <div className='p-8 pt-20 flex-grow'>
                             <h3 className='text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand-gold)] to-white mb-2'>باقة VIP</h3>
-                            <div className='text-4xl font-bold text-[var(--brand-gold)] mb-6'>
-                                3000 <span className='text-xl text-gray-400 font-normal'>ريال / م²</span>
+                            <div className='text-3xl font-bold text-[var(--brand-gold)] mb-6'>
+                                سعر تنافسي
                             </div>
                             <p className='text-gray-400 mb-8 border-b border-white/10 pb-6 min-h-[5rem]'>
                                 باقة حصرية موجهة للإدارات العليا وكبرى الشركات، توفر أعلى مستوى من الخصوصية والرفاهية والخدمات.
