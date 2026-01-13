@@ -85,9 +85,9 @@ export default function Contact() {
                         <label className="text-sm font-bold text-[var(--brand-gold)] mb-3 block px-1">الاسم</label>
                         <div className="relative">
                             <input type="text" name="name" required placeholder="الاسم الكريم"
-                                className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pl-12'
+                                className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pr-12'
                             />
-                            <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
+                            <FaUser className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
                         </div>
                     </div>
 
@@ -96,9 +96,9 @@ export default function Contact() {
                         <label className="text-sm font-bold text-[var(--brand-gold)] mb-3 block px-1">الايميل</label>
                         <div className="relative">
                             <input type="email" name="email" required placeholder="example@email.com"
-                                className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pl-12'
+                                className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pr-12'
                             />
-                            <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
+                            <FaEnvelope className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
                         </div>
                     </div>
                 </div>
@@ -108,9 +108,9 @@ export default function Contact() {
                     <label className="text-sm font-bold text-[var(--brand-gold)] mb-3 block px-1">رقم الهاتف</label>
                     <div className="relative">
                         <input type="tel" name="phone" required placeholder="05xxxxxxxx"
-                            className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pl-12'
+                            className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pr-12'
                         />
-                        <FaPhone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
+                        <FaPhone className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
                     </div>
                 </div>
 
@@ -119,9 +119,9 @@ export default function Contact() {
                     <label className="text-sm font-bold text-[var(--brand-gold)] mb-3 block px-1">الرساله</label>
                     <div className="relative">
                         <textarea name="message" id="contact-message" required placeholder="كيف يمكننا مساعدتك؟"
-                            className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 h-40 resize-none focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pl-12'
+                            className='w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 h-40 resize-none focus:border-[var(--brand-gold)]/50 focus:bg-white/10 focus:outline-none transition-all duration-300 text-white placeholder-gray-600 pr-12'
                         />
-                        <FaRegMessage className="absolute left-4 top-6 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
+                        <FaRegMessage className="absolute right-4 top-6 text-gray-500 group-focus-within:text-[var(--brand-gold)] transition-colors" />
                     </div>
                 </div>
 

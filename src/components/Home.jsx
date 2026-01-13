@@ -7,7 +7,6 @@ const BurjAlMughib = lazy(() => import('./BurjAlMughib'));
 const Projects = lazy(() => import('./Projects'));
 const CustomerServices = lazy(() => import('./Services'));
 const Contact = lazy(() => import('./Contact'));
-const Footer = lazy(() => import('./Footer'));
 
 const Home = () => {
     return (
@@ -19,7 +18,6 @@ const Home = () => {
                 <Projects />
                 <CustomerServices />
                 <Contact />
-                <Footer />
             </Suspense>
         </div>
     )

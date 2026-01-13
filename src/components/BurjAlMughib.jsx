@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { FiMapPin, FiBriefcase, FiGrid, FiCheckCircle } from 'react-icons/fi'
 
@@ -161,9 +162,8 @@ const BurjAlMughib = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row-reverse gap-6">
-                            <a
-                                href="#Contact"
-                                onClick={handleQuoteClick}
+                            <Link
+                                to="/burj-al-mughib"
                                 className="group relative px-12 py-5 rounded-full font-bold text-lg overflow-hidden transition-all duration-700 hover:-translate-y-1 flex items-center justify-center gap-3"
                             >
                                 {/* Simplified Background for Performance */}
@@ -171,12 +171,12 @@ const BurjAlMughib = () => {
 
                                 {/* Content */}
                                 <span className="relative z-10 text-[var(--brand-gold)] group-hover:text-[#1a1b20] transition-colors duration-500">
-                                    تواصل معنا لحجز مساحتك
+                                    المزيد من التفاصيل
                                 </span>
 
                                 {/* Internal Light Scan Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-light-sweep"></div>
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>
